@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import ManageMovie from './components/ManageMovie';
+import Header from './components/Header';
+import Home from './components/Home';
+// import ManageCategory from './components/ManageCategory';
+// import ConnectMovieCategory from './components/ConnectMovieCategory';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <Header navBrand={'MoviePurwadhika'} />
+        <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/managemovie" component={ManageMovie} />
+            {/* <Route path="/managecategory" component={ManageCategory} />
+            <Route path="/connectmc" component={ConnectMovieCategory} /> */}
+          </div>
+      </div>
+    )
+  }
 }
 
 export default App;
